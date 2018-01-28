@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="gulumsemeText"></p>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var durum = JSON.parse(this.responseText);
+
+        //INSAN BULUNDUGU DURUM
+        if(durum.insan=="true"){
+
+            //INSANIN GULDUGU DURUM
+            if(durum.gulumseme=="false"){
+                var x = document.createElement("IMG");
+                x.setAttribute("src", "yune.png");
+                x.setAttribute("width", "604");
+                x.setAttribute("height", "228");
+                x.setAttribute("alt", "yune");
+                document.body.appendChild(x);
+
+            } else if(durum.gulumseme=="true"){
+                //INSANIN GULDUGU DURUM
+                document.getElementById("gulumsemeText").innerHTML = durum.pets;         
+            } 
+
+        //INSAN OLMADIGI DURUM
+        } else {
+         document.getElementById("gulumsemeText").innerHTML = durum.insan;   
+        }
+        //document.getElementById("demo").innerHTML = durum.gulumseme;
+    }
+};
+
+
+xmlhttp.open("GET", "http://localhost:8080/json_demo.txt", true);
+xmlhttp.send();
+</script>
+
+
+</body>
+</html>
