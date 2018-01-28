@@ -1,0 +1,44 @@
+<!-- TODO: sol tarafa  karikatürle tarih arasına boşluk konulacak -->
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body bgcolor="#00000">
+
+
+<div class="w3-row-padding">
+  <div class="w3-third">
+   <p id="tarih"></p>
+
+   <script>
+   var yune = Date()
+   var buyuk=yune.fontsize(55);
+   var gosterBirKismi=buyuk.substring(20,37)
+   gosterBirKismi=gosterBirKismi.fontsize(55)
+   document.getElementById("tarih").innerHTML = gosterBirKismi;
+   document.getElementById("tarih").style.color = "white";
+   </script>
+
+
+<!-- TODO: boşluk konulacak -->
+   <a><img src="/Users/yunus/Desktop/yune.png" alt="booked.net"/></a>
+
+  </div>
+
+  <div class="w3-third">
+  	<!-- Bu DIV boş kalacak -->
+    <h2> <font size="10" color="#FFFFFF"></font></h2>
+   
+  </div>
+
+  <div class="w3-third">
+    
+    <h2> <font size="10" color="#FFFFFF">hava durumu</font></h2>
+   
+  </div>
+</div>
+
+</body>
+</html>
